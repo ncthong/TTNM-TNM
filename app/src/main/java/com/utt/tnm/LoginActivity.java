@@ -17,7 +17,6 @@ import com.utt.ttnm.R;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -33,14 +32,14 @@ public class LoginActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
         if (auth.getCurrentUser() != null) {
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
             finish();
         }
 
         // set the view now
         setContentView(R.layout.activity_login);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
         inputEmail = (EditText) findViewById(R.id.email);
         inputPassword = (EditText) findViewById(R.id.password);
@@ -81,22 +80,22 @@ public class LoginActivity extends AppCompatActivity {
                 //Xac thuc nguoi dung
                 auth.signInWithEmailAndPassword(email,password)
                         .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        progressBar.setVisibility(View.GONE);
-                        if (task.isSuccessful()){
-                            if(password.length() < 6){
-                                inputPassword.setError(getString(R.string.minimum_password));
-                            }else{
-                                Toast.makeText(LoginActivity.this,getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                progressBar.setVisibility(View.GONE);
+                                if (task.isSuccessful()){
+                                    if(password.length() < 6){
+                                        inputPassword.setError(getString(R.string.minimum_password));
+                                    }else{
+                                        Toast.makeText(LoginActivity.this,getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
+                                    }
+                                }else {
+                                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
                             }
-                        }else {
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(intent);
-                            finish();
-                        }
-                    }
-                });
+                        });
             }
         });
     }

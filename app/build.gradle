@@ -12,6 +12,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -84,7 +85,8 @@ dependencies {
     implementation 'com.airbnb.android:lottie:3.4.1'
     implementation 'com.google.firebase:firebase-auth:9.0.2'
     implementation 'com.google.android.gms:play-services-gcm:17.0.0'
-
+    implementation 'com.google.firebase:firebase-core:15.0.2'
+    implementation 'androidx.multidex:multidex:2.0.1'
 }
 apply plugin: 'com.android.application'
 // Add this line

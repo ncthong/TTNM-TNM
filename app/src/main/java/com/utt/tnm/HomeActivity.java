@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import com.utt.fragments.AccountFragment;
 import com.utt.fragments.CartFragment;
 import com.utt.fragments.HomeFragment;
+import com.utt.fragments.NoneAccountFragment;
 import com.utt.fragments.OrderFragment;
 import com.utt.fragments.StoreFragment;
 import com.utt.fragments.fragment_lab.ComcomFragment;
@@ -134,8 +135,8 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFr
                         PorterDuff.Mode.MULTIPLY);
                 imgOrderLayout.setColorFilter(ContextCompat.getColor(getApplicationContext(), R.color.color_basic_4),
                         PorterDuff.Mode.MULTIPLY);
-                    loadFragment(new AccountFragment());
-                Log.d(TAG, "account fragment");
+                    loadFragment(new NoneAccountFragment());
+                Log.d(TAG, "none account fragment");
 
             }
         });

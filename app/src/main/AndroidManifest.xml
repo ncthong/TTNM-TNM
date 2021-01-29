@@ -11,9 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.utt.tnm.ResetPasswordActivity"></activity>
-        <activity android:name="com.utt.tnm.LoginActivity" />
-        <activity android:name="com.utt.tnm.SignupActivity" />
+        <activity android:name="com.utt.tnm.SignupActivity"></activity>
+        <activity android:name="com.utt.tnm.LoginActivity">
+        </activity>
+        <activity android:name="com.utt.tnm.ResetPasswordActivity" />
         <activity android:name="com.utt.tnm.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

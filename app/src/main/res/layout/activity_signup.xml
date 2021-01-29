@@ -30,11 +30,13 @@
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:imeActionId="@+id/login"
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                tools:ignore="InvalidImeActionId" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -48,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:focusableInTouchMode="true"
                 android:hint="@string/hint_password"
-                android:ActionId="@+id/login"
+                android:imeActionId="@+id/login"
                 android:imeOptions="actionUnspecified"
                 android:inputType="textPassword"
                 android:maxLines="1"
